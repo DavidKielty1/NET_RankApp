@@ -1,22 +1,35 @@
-﻿import React, { useState, useEffect } from 'react'
+﻿import React, { useState, useEffect } from 'react';
+import MovieImageArr from './MovieImages.js'
 
 const RankItems = () => {
-    const [items, setItems] = useState([])
-    const dataType = 1
 
-    useEffect((
-    ) => {
+    const [items, setItems] = useState([]);
+    const dataType = 1;
+
+    useEffect(() => {
         fetch(`item/${dataType}`)
-            .then((results) => { return results.json() })
-            .then((data) => setItems(data))
+            .then((results) => {
+                return results.json();
+            })
+            .then(data => {
+                setItems(data);
+            })
     }, [])
-
-        .then(console.log(items))
 
 
     return (
         <main>
-            (items != null )? {items.map((item) => <h3>{item.title}</h3>)} :<div>Loading . . .</div>
+            <div className="items-not-ranked">
+             {
+                    (items.length) ? items.map((item, idx) =>
+                        <div className="unranked-cell">
+                            <img key={idx} id={`item-${item.id}`} src={MovieImageArr.find(o => o.id === item.imageId)?.image} alt="Movie posters" />
+                        </div>
+                    
+                ) :  <h3>Loading...</h3>
+            }
+            </div>
+          
         </main>)
 }
 
