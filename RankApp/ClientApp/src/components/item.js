@@ -1,7 +1,7 @@
-﻿const Item = ({ item, drag, idx, itemImgObj }) => {
+﻿const Item = ({ item, drag, itemImgObj }) => {
     return (
             <div className="unranked-cell">
-                <img key={idx} id={`item-${item.id}`} src={itemImgObj.image} alt="Movie posters"
+                <img id={`item-${item.id}`} src={itemImgObj.image} alt="Movie posters"
                     style={{ cursor: "pointer" }} draggable="true" onDragStart={drag}
                 />
             </div>

@@ -6,7 +6,7 @@ const ItemCollection = ({ items, drag, imgArr }) => {
         {
             items.map((item, idx) =>
                 (item.ranking === 0) ?
-                    <Item key={idx} item={item} drag={drag} itemImgObj={imgArr.find(o => o.id === item.imageId)} /> : null
+                    <Item key={`item-${item.id}`} item={item} drag={drag} itemImgObj={imgArr.find(o => o.id === item.imageId)} /> : null
             )}
         </div>
     )

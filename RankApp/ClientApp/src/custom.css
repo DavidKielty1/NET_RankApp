@@ -82,7 +82,7 @@ main {
 }
 
 
-.button-64 {
+.reload {
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 0;
@@ -100,18 +100,18 @@ main {
     padding: 3px;
     text-decoration: none;
     user-select: none;
-    -webkit-user-select: none;
+    -webkit-user-select: none; 
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
 }
 
-.button-64:active,
-.button-64:hover {
+.reload:active,
+.reload:hover {
     outline: 0;
 }
 
-.button-64 span {
+.reload span {
     background-color: rgb(5, 6, 45);
     padding: 16px 24px;
     border-radius: 6px;
@@ -120,15 +120,8 @@ main {
     transition: 300ms;
 }
 
-.button-64:hover span {
+.reload:hover span {
     background: none;
-}
-
-@media (min-width: 768px) {
-    .button-64 {
-        font-size: 24px;
-        min-width: 196px;
-    }
 }
 
 @media (min-width: 768px) {
